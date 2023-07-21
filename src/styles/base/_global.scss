@@ -1,0 +1,22 @@
+/*****************************************
+* GLOBAL SCOPE STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+body {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    height: calc(100vh - 9rem);
+}
+
+#root {
+    height: 100%;
+}
