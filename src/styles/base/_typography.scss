@@ -3,3 +3,11 @@
 *****************************************/
 
 @use "../utils/" as *;
+
+body {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    color: #2c3e50;
+}

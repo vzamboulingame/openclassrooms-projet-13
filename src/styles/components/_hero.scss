@@ -1,0 +1,36 @@
+/*****************************************
+* HERO COMPONENT STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+.hero {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30dvh;
+    width: 100%;
+    background-image: url("../../images/bank-tree.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left -40rem;
+
+    &-content {
+        width: 35rem;
+        background: white;
+        padding: 2em;
+        text-align: left;
+        margin-right: 5em;
+
+        &-subtitle {
+            font-size: 2.4rem;
+            font-weight: bold;
+        }
+
+        &-text {
+            font-size: 2rem;
+            margin-top: 1em;
+        }
+    }
+}

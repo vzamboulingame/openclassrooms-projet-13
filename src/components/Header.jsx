@@ -9,13 +9,14 @@ import logo from "../images/argentBankLogo.png";
  */
 export default function Header() {
   return (
-    <header className="header">
-      <div className="container header-container">
-        <Link to="/">
-          <img className="header-logo" src={logo} alt="Logo Argent Bank" />
-        </Link>
-        <Link to="/login">
-          <p>Sign In</p>
+    <header className="header container">
+      <Link to="/">
+        <img className="header-logo" src={logo} alt="Argent Bank Logo" />
+      </Link>
+      <div className="header-signin">
+        <i class="header-signin-icon fa-solid fa-user-circle"></i>
+        <Link className="header-signin-link" to="/login">
+          Sign In
         </Link>
       </div>
     </header>

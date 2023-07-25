@@ -1,0 +1,43 @@
+/*****************************************
+* HEADER COMPONENT STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    line-height: 100%;
+    padding: 0.2em;
+
+    &-logo {
+        width: 20rem;
+    }
+
+    &-signin {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 0.5em;
+        margin-right: 1em;
+        font-size: 1.8rem;
+
+        &-icon {
+            color: #2c3e50;
+        }
+
+        &-link {
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
