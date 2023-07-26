@@ -18,7 +18,7 @@ export default function Home() {
       <Header />
       <div className="home">
         <Hero />
-        <section className="home-features container">
+        <section className="home-features">
           <Feature
             icon={chatIcon}
             title="You are our #1 priority"
