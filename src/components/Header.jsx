@@ -15,7 +15,7 @@ export default function Header() {
       </Link>
       <div className="header-signin">
         <i class="header-signin-icon fa-solid fa-user-circle"></i>
-        <Link className="header-signin-link" to="/login">
+        <Link className="header-signin-link" to="/signin">
           Sign In
         </Link>
       </div>

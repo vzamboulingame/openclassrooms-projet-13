@@ -1,0 +1,91 @@
+/*****************************************
+* HOME PAGE SPECIFIC STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+.signin {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(100dvh - 16rem);
+    background-color: #12002b;
+    padding: 4em;
+
+    @include for-mobile {
+        padding: 2em;
+    }
+
+    &-form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30rem;
+        margin: 0 auto;
+        padding: 2em;
+        background-color: #ffffff;
+
+        @include for-mobile {
+            padding: 1em;
+        }
+    }
+
+    &-header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1em;
+        margin: 0.5em 0;
+
+        &-icon {
+            font-size: 2rem;
+        }
+
+        &-text {
+            font-size: 2.5rem;
+        }
+    }
+
+    &-input {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        width: 100%;
+        text-align: left;
+        margin: 0.5em 0;
+
+        & input {
+            width: 100%;
+            padding: 0.5em;
+        }
+    }
+
+    &-remember {
+        display: flex;
+        flex-flow: row nowrap;
+        text-align: left;
+        column-gap: 1em;
+        width: 100%;
+        margin: 0.5em 0;
+    }
+
+    &-button {
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: bold;
+        background-color: #00bc77;
+        color: #ffffff;
+        margin: 0.5em 0;
+        padding: 0.25em;
+        border: 0.1rem solid #00bc77;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

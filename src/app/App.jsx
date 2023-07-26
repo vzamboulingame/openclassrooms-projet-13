@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "../pages/Login";
 import Home from "../pages/Home";
+import SignIn from "../pages/SignIn";
 import NotFound from "../pages/NotFound";
 import "../styles/style.scss";
 
@@ -16,7 +16,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
