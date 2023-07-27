@@ -1,0 +1,64 @@
+/*****************************************
+* NOTFOUND PAGE SPECIFIC STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+.notfound {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: calc(100dvh - 16rem);
+    background-color: #12002b;
+    color: #ffffff;
+    padding: 2em;
+
+    @include for-mobile {
+        padding: 0;
+    }
+
+    &-code {
+        font-size: 30rem;
+        font-weight: bold;
+
+        @include for-tablet {
+            font-size: 20rem;
+        }
+
+        @include for-mobile {
+            font-size: 10rem;
+        }
+    }
+
+    &-text {
+        font-size: 10rem;
+
+        @include for-tablet {
+            font-size: 8rem;
+        }
+
+        @include for-mobile {
+            font-size: 5rem;
+        }
+    }
+
+    &-link {
+        font-size: 5rem;
+        text-decoration: none;
+        margin: 3em;
+        color: #653592;
+
+        @include for-tablet {
+            font-size: 4rem;
+        }
+
+        @include for-mobile {
+            font-size: 2.5rem;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
