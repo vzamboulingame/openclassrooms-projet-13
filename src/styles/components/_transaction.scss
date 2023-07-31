@@ -6,7 +6,7 @@
 
 .transaction {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -14,6 +14,10 @@
     border: 0.1rem solid #000000;
     background-color: #ffffff;
     color: #2c3e50;
+
+    @include for-mobile {
+        padding: 1em;
+    }
 
     &-button {
         padding: 0.5em 1em;
@@ -24,15 +28,29 @@
         background-color: #00bc77;
         color: #ffffff;
         cursor: pointer;
+
+        @include for-mobile {
+            font-size: 1.8rem;
+            width: 100%;
+            margin: 1em 0 0 0;
+        }
     }
 
     &-title,
     &-desc {
         font-size: 1.8rem;
+
+        @include for-mobile {
+            font-size: 1.6rem;
+        }
     }
 
     &-amount {
         font-size: 4rem;
         font-weight: bold;
+
+        @include for-mobile {
+            font-size: 3rem;
+        }
     }
 }
