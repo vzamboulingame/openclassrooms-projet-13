@@ -19,8 +19,8 @@ export default function Header() {
       {isProfileCurrentPage ? (
         <div className="header-signin">
           <i class="header-signin-icon fa-solid fa-user-circle"></i>
-          <Link className="header-signin-link" to="/profile/edit">
-            UserName
+          <Link className="header-signin-link" to="#">
+            Username
           </Link>
           <i class="header-signin-icon fa-solid fa-sign-out"></i>
           <Link className="header-signin-link" to="/">

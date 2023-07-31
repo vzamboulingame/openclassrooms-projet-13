@@ -23,7 +23,6 @@
         justify-content: space-between;
         align-items: center;
         column-gap: 0.5em;
-        margin-right: 1em;
         font-size: 1.8rem;
 
         &-icon {
@@ -34,6 +33,11 @@
             font-weight: bold;
             color: #2c3e50;
             text-decoration: none;
+            margin-right: 1em;
+
+            @include for-mobile {
+                margin-right: 0.5em;
+            }
 
             &:hover {
                 text-decoration: underline;

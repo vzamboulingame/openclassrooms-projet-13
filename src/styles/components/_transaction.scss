@@ -1,0 +1,38 @@
+/*****************************************
+* TRANSACTION COMPONENT STYLES
+*****************************************/
+
+@use "../utils/" as *;
+
+.transaction {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1em 2em;
+    border: 0.1rem solid #000000;
+    background-color: #ffffff;
+    color: #2c3e50;
+
+    &-button {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-size: 2rem;
+        font-weight: bold;
+        border-color: #00bc77;
+        background-color: #00bc77;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    &-title,
+    &-desc {
+        font-size: 1.8rem;
+    }
+
+    &-amount {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+}
