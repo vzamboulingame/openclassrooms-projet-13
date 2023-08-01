@@ -4,6 +4,7 @@ const initialState = {
   username: "",
   password: "",
   rememberMe: false,
+  authToken: null,
 };
 
 const signInSlice = createSlice({
@@ -19,8 +20,12 @@ const signInSlice = createSlice({
     setRememberMe(state, action) {
       state.rememberMe = action.payload;
     },
+    setAuthToken(state, action) {
+      state.authToken = action.payload;
+    },
   },
 });
 
-export const { setUsername, setPassword, setRememberMe } = signInSlice.actions;
+export const { setUsername, setPassword, setRememberMe, setAuthToken } =
+  signInSlice.actions;
 export default signInSlice.reducer;

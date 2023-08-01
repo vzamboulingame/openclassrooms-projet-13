@@ -1,7 +1,14 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { setUsername, setPassword, setRememberMe } from "../slices/signInSlice";
+import {
+  setUsername,
+  setPassword,
+  setRememberMe,
+  setAuthToken,
+} from "../slices/signInSlice";
+import { useLoginMutation } from "../slices/apiSlice";
 
 /**
  * SignIn component.
@@ -11,21 +18,40 @@ import { setUsername, setPassword, setRememberMe } from "../slices/signInSlice";
  */
 export default function SignIn() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  // Extract the login mutation using RTK Query custom hook
+  const [login] = useLoginMutation();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const rememberMeCheckbox = document.getElementById("rememberMe");
+    const usernameInput = document.getElementById("username").value;
+    const passwordInput = document.getElementById("password").value;
+    const rememberMeCheckbox = document.getElementById("rememberMe").checked;
 
     // Dispatch the Redux actions to store the input values in the Redux store
-    dispatch(setUsername(usernameInput.value));
-    dispatch(setPassword(passwordInput.value));
-    dispatch(setRememberMe(rememberMeCheckbox.checked));
+    dispatch(setUsername(usernameInput));
+    dispatch(setPassword(passwordInput));
+    dispatch(setRememberMe(rememberMeCheckbox));
 
-    // Reset the input fields after storing data in the Redux store
-    usernameInput.value = "";
-    passwordInput.value = "";
+    // Call the login mutation to authenticate the user and get the JWT token
+    try {
+      const { data } = await login({
+        email: usernameInput,
+        password: passwordInput,
+      });
+
+      // Store the JWT token in the Redux store
+      dispatch(setAuthToken(data.body.token));
+
+      // Reset the input fields after storing data in the Redux store
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+
+      data.body.token && navigate("/profile");
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
 
   return (
