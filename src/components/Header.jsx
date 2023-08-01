@@ -18,18 +18,18 @@ export default function Header() {
       </Link>
       {isProfileCurrentPage ? (
         <div className="header-signin">
-          <i class="header-signin-icon fa-solid fa-user-circle"></i>
+          <i className="header-signin-icon fa-solid fa-user-circle"></i>
           <Link className="header-signin-link" to="#">
             Username
           </Link>
-          <i class="header-signin-icon fa-solid fa-sign-out"></i>
+          <i className="header-signin-icon fa-solid fa-sign-out"></i>
           <Link className="header-signin-link" to="/">
             Sign Out
           </Link>
         </div>
       ) : (
         <div className="header-signin">
-          <i class="header-signin-icon fa-solid fa-user-circle"></i>
+          <i className="header-signin-icon fa-solid fa-user-circle"></i>
           <Link className="header-signin-link" to="/signin">
             Sign In
           </Link>

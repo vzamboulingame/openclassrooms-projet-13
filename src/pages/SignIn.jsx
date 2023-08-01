@@ -39,11 +39,21 @@ export default function SignIn() {
           </div>
           <div className="signin-input">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <input
+              type="text"
+              id="username"
+              name="username"
+              autoComplete="on"
+            />
           </div>
           <div className="signin-input">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autoComplete="on"
+            />
           </div>
           <div className="signin-remember">
             <input type="checkbox" id="rememberMe" />
