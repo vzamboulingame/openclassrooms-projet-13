@@ -12,10 +12,7 @@ export const apiSlice = createApi({
         body: credentials,
       }),
     }),
-    getProfile: builder.query({
-      query: () => "/user/profile",
-    }),
   }),
 });
 
-export const { useLoginMutation, useGetProfileQuery } = apiSlice;
+export const { useLoginMutation } = apiSlice;
