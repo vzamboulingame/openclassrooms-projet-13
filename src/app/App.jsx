@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import Profile from "../pages/Profile";
@@ -14,14 +13,12 @@ import "../styles/style.scss";
  */
 
 export default function App() {
-  const authToken = useSelector((state) => state.signIn.authToken);
-
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/profile" element={authToken ? <Profile /> : <SignIn />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

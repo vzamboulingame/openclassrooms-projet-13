@@ -1,3 +1,12 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetUserProfileMutation } from "../slices/apiSlice";
+import {
+  setId,
+  setEmail,
+  setFirstName,
+  setLastName,
+} from "../slices/profileSlice";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Transaction from "../components/Transaction";
@@ -9,13 +18,37 @@ import Transaction from "../components/Transaction";
  * @returns {JSX.Element} - Rendered component.
  */
 export default function Profile() {
+  const dispatch = useDispatch();
+  const [getUserProfile] = useGetUserProfileMutation();
+  const authToken = useSelector((state) => state.signIn.authToken);
+  const firstName = useSelector((state) => state.profile.firstName);
+
+  useEffect(() => {
+    // Call the getUserProfile mutation to retrieve the user profile data
+    getUserProfile({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`,
+    })
+      .unwrap()
+      .then((data) => {
+        // Store the profile data in the Redux store
+        dispatch(setId(data.body.id));
+        dispatch(setEmail(data.body.email));
+        dispatch(setFirstName(data.body.firstName));
+        dispatch(setLastName(data.body.lastName));
+      })
+      .catch((error) => {
+        console.error("User profile fetch failed: ", error);
+      });
+  }, [getUserProfile, authToken, dispatch]);
+
   return (
     <div>
       <Header />
       <div className="profile">
         <p className="profile-welcome">
           Welcome back <br />
-          Username!
+          {firstName || "Username"}!
         </p>
         <button className="profile-button">Edit Name</button>
         <div className="profile-transactions">

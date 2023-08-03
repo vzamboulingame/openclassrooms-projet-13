@@ -6,13 +6,20 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: apiUrl }),
   endpoints: (builder) => ({
     login: builder.mutation({
-      query: (credentials) => ({
+      query: (data) => ({
         url: "/user/login",
         method: "POST",
-        body: credentials,
+        body: data,
+      }),
+    }),
+    getUserProfile: builder.mutation({
+      query: (data) => ({
+        url: "/user/profile",
+        method: "POST",
+        headers: data,
       }),
     }),
   }),
 });
 
-export const { useLoginMutation } = apiSlice;
+export const { useLoginMutation, useGetUserProfileMutation } = apiSlice;

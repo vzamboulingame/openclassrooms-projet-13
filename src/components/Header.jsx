@@ -1,4 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { resetLoginInfo } from "../slices/signInSlice";
+import { resetProfileInfo } from "../slices/profileSlice";
 import logo from "../images/argentBankLogo.png";
 
 /**
@@ -9,7 +12,14 @@ import logo from "../images/argentBankLogo.png";
  */
 export default function Header() {
   const location = useLocation();
+  const dispatch = useDispatch();
   const isProfileCurrentPage = location.pathname === "/profile";
+  const firstName = useSelector((state) => state.profile.firstName);
+
+  const handleClick = () => {
+    dispatch(resetLoginInfo());
+    dispatch(resetProfileInfo());
+  };
 
   return (
     <header className="header container">
@@ -20,10 +30,10 @@ export default function Header() {
         <div className="header-signin">
           <i className="header-signin-icon fa-solid fa-user-circle"></i>
           <Link className="header-signin-link" to="#">
-            Username
+            {firstName || "Username"}
           </Link>
           <i className="header-signin-icon fa-solid fa-sign-out"></i>
-          <Link className="header-signin-link" to="/">
+          <Link className="header-signin-link" onClick={handleClick} to="/">
             Sign Out
           </Link>
         </div>
