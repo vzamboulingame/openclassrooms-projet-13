@@ -19,6 +19,7 @@ export default function Header() {
   const handleClick = () => {
     dispatch(resetLoginInfo());
     dispatch(resetProfileInfo());
+    localStorage.removeItem("token");
   };
 
   return (
@@ -30,7 +31,7 @@ export default function Header() {
         <div className="header-signin">
           <i className="header-signin-icon fa-solid fa-user-circle"></i>
           <Link className="header-signin-link" to="#">
-            {firstName || "Username"}
+            {firstName}
           </Link>
           <i className="header-signin-icon fa-solid fa-sign-out"></i>
           <Link className="header-signin-link" onClick={handleClick} to="/">

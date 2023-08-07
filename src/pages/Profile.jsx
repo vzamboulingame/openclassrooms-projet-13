@@ -20,7 +20,7 @@ import Transaction from "../components/Transaction";
 export default function Profile() {
   const dispatch = useDispatch();
   const [getUserProfile] = useGetUserProfileMutation();
-  const authToken = useSelector((state) => state.signIn.authToken);
+  const authToken = localStorage.getItem("token");
   const firstName = useSelector((state) => state.profile.firstName);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function Profile() {
       <div className="profile">
         <p className="profile-welcome">
           Welcome back <br />
-          {firstName || "Username"}!
+          {firstName}!
         </p>
         <button className="profile-button">Edit Name</button>
         <div className="profile-transactions">

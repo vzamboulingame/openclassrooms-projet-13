@@ -40,6 +40,9 @@ export default function SignIn() {
         const jwtToken = data.body.token;
         dispatch(setAuthToken(jwtToken));
 
+        // Save the token in local storage to persist the user's login session
+        localStorage.setItem("token", jwtToken);
+
         // Reset the input fields after storing data in the Redux store
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
