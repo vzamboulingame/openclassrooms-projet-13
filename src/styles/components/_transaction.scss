@@ -29,6 +29,10 @@
         color: #ffffff;
         cursor: pointer;
 
+        &:hover {
+            text-decoration: underline;
+        }
+
         @include for-mobile {
             font-size: 1.8rem;
             width: 100%;

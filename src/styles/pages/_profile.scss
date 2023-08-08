@@ -1,5 +1,5 @@
 /*****************************************
-* NOTFOUND PAGE SPECIFIC STYLES
+* PROFILE PAGE SPECIFIC STYLES
 *****************************************/
 
 @use "../utils/" as *;
@@ -32,13 +32,17 @@
 
     &-button {
         padding: 0.5em 1em;
-        margin: 2em 0;
-        font-size: 1.5rem;
+        margin: 1.5em 0;
+        font-size: 2rem;
         font-weight: bold;
         border-color: #00bc77;
         background-color: #00bc77;
         color: #ffffff;
         cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &-transactions {
@@ -47,5 +51,71 @@
         row-gap: 2em;
         width: 100%;
         height: 100%;
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        height: 30rem;
+
+        @include for-mobile {
+            height: 20rem;
+        }
+    }
+
+    &-edit {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        &-zone {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            column-gap: 2em;
+            font-size: 2rem;
+            font-weight: bold;
+
+            @include for-mobile {
+                font-size: 1.8rem;
+                column-gap: 1em;
+            }
+        }
+
+        &-input {
+            width: 50%;
+            padding: 0.5em 1em;
+            text-align: left;
+        }
+
+        &-button {
+            width: 50%;
+            padding: 0.25em 0.5em;
+            text-align: center;
+            border: #ffffff;
+            cursor: pointer;
+
+            &.cancel {
+                background-color: #ffffff;
+                color: #ff5050;
+            }
+
+            &.save {
+                background-color: #ffffff;
+                color: #00bc77;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
