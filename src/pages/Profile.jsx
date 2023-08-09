@@ -23,7 +23,6 @@ export default function Profile() {
   const dispatch = useDispatch();
   const [getUserProfile] = useGetUserProfileMutation();
   const [updateUserProfile] = useUpdateUserProfileMutation();
-  const authToken = localStorage.getItem("token");
   const firstName = useSelector((state) => state.profile.firstName);
   const lastName = useSelector((state) => state.profile.lastName);
   const [editMode, setEditMode] = useState(false);
@@ -37,19 +36,14 @@ export default function Profile() {
   };
 
   const saveEdit = async () => {
-    const headerData = {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`
-    };
-    const bodyData = JSON.stringify({
+    const body = JSON.stringify({
       firstName: await document.getElementById("firstNameInput").value,
       lastName: await document.getElementById("lastNameInput").value
     });
 
-    console.log(headerData);
-    console.log(bodyData);
+    console.log(body);
 
-    updateUserProfile(headerData, bodyData)
+    updateUserProfile(body)
       .unwrap()
       .then((data) => {
         console.log(data);
@@ -63,11 +57,7 @@ export default function Profile() {
   };
 
   useEffect(() => {
-    const headerData = {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`
-    };
-    getUserProfile(headerData)
+    getUserProfile()
       .unwrap()
       .then((data) => {
         dispatch(setId(data.body.id));
@@ -78,7 +68,7 @@ export default function Profile() {
       .catch((error) => {
         console.error("User profile fetch failed: ", error);
       });
-  }, [authToken, dispatch, getUserProfile]);
+  }, [dispatch, getUserProfile]);
 
   return (
     <div>
