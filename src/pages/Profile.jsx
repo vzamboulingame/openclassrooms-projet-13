@@ -35,18 +35,18 @@ export default function Profile() {
     setEditMode(false);
   };
 
-  const saveEdit = async () => {
-    const body = JSON.stringify({
-      firstName: await document.getElementById("firstNameInput").value,
-      lastName: await document.getElementById("lastNameInput").value
-    });
+  const saveEdit = () => {
+    const firstNameInput = document.getElementById("firstNameInput");
+    const lastNameInput = document.getElementById("lastNameInput");
 
-    console.log(body);
+    const body = {
+      firstName: firstNameInput.value,
+      lastName: lastNameInput.value
+    };
 
     updateUserProfile(body)
       .unwrap()
       .then((data) => {
-        console.log(data);
         dispatch(setFirstName(data.body.firstName));
         dispatch(setLastName(data.body.lastName));
         setEditMode(false);
