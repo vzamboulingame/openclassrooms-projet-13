@@ -1,46 +1,112 @@
-# Getting Started with Create React App and Redux
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Argent Bank
 
-## Available Scripts
+![html][html5-badge]
+![css][css3-badge]
+![javascript][javascript-badge]
+![react][react-badge]
+![redux-badge]
+![sass][sass-badge]
+![vscode][vscode-badge]
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+Vous venez de commencer à travailler chez Remede Agency, une agence spécialisée dans le développement d'applications web. L'équipe est principalement composée de développeurs back-end et vient de commencer à recruter d'autres spécialistes front-end.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Après quelques jours dans l’entreprise, on vous confie un nouveau projet pour le client Argent Bank, une nouvelle banque qui essaie de percer dans le secteur et qui a besoin d'aide pour mettre en place son application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Logo Argent Bank](./src/images/argentBankLogo.png)
 
-### `npm test`
+Ce projet se décomposera en deux phases :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Phase 1 : Authentification des utilisateurs - Création d'une application web permettant aux clients de se connecter et de gérer leurs comptes et leur profil.
+- Phase 2 : Transactions - Il s’agirait de spécifier les endpoints d’API nécessaires pour une éventuelle deuxième mission une fois que nous aurons terminé la première.
 
-### `npm run build`
+## Compétences évaluées
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- S'authentifier à une API
+- Implémenter un gestionnaire d'état dans une application React
+- Intéragir avec une API
+- Modéliser une API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Notes d'installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
 
-### `npm run eject`
+Cloner le repository via :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git clone https://github.com/vzamboulingame/openclassrooms-projet-13.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Lancer le frontend comme suit :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+cd openclassrooms-projet-13
+npm install
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Le site sera alors accessible en local via l'URL :
 
-## Learn More
+```
+http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+On pourra ensuite se loguer avec l'un des 2 comptes suivants :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+Tony Stark
+
+Email: tony@stark.com
+Password: password123
+
+Steve Rogers
+
+Email: steve@rogers.com,
+Password: password456
+```
+
+### Backend
+
+Installer et lancer le backend en suivant les instructions indiquées sur le lien suivant :
+
+```
+https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API
+```
+
+L'API du backend sera alors accessible en local via l'URL :
+
+```
+http://localhost:3001
+```
+
+La liste des endpoints possibles sera accessible via l'URL suivante :
+
+```
+http://localhost:3001/api-docs
+```
+
+## Contact
+
+Vinodh Zamboulingame
+
+[![linkedin][linkedin-badge]][linkedin-url]
+[![github][github-badge]][github-url]
+
+<p align="right"><a href="#readme-top">back to top</a></p>
+
+<!-- BADGE LINKS -->
+
+[html5-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[sass-badge]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[javascript-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[react-badge]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[redux-badge]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
+[vscode-badge]: https://img.shields.io/badge/Made%20with-VSCode-1f425f.svg?style=for-the-badge&logoColor=white
+[linkedin-badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/vzamboulingame
+[github-badge]: https://img.shields.io/badge/GitHub-0a0a0a?style=for-the-badge&logo=github&logoColor=white
+[github-url]: https://github.com/vzamboulingame
